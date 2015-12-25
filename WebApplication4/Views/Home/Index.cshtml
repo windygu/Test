@@ -3,11 +3,51 @@
     ViewBag.Title = "Index";
 }
 
-<div id="p" class="easyui-panel" title="Index"
+<script type="text/javascript">
+    $(function() {
+
+        $("#btnTest").click(function () {
+
+            try {
+                $.getJSON("http://192.168.0.199:8090/Scada/CollectMeterReading", { CollectCodeList: "11111113,11111115,123456", EndTime: "20151120235959" },
+                function (data) {
+                    var s = "";
+                    //alert(data.ResultCode + data.Message);
+                    $.each(data.SuccessList, function (i, v) {
+                        //alert(v.CollectCode + "|" + v.CollectTime + "|" + v.MeterReading + "|" + v.WaterAmount);
+                        s += v.CollectCode + "|" + v.CollectTime + "|" + v.MeterReading + "|" + v.WaterAmount + "<br>";
+                    });
+
+                    $.each(data.FaultList, function (i, v) {
+                        s += v.CollectCode + "|" + v.Reason + "<br>";
+                    });
+
+                    $("#p").html(s);
+                });
+            }
+            catch (ex) {
+                alert("error");
+            }
+
+        });
+
+        $("#btnClear").click(function () {
+            $("#p").html("");
+        });
+
+    });
+</script>
+
+<div id="p" class="easyui-panel" title="返回结果"
      style="width:500px;height:150px;padding:10px;background:#fafafa;"
      data-options="iconCls:'icon-save',closable:true,
                 collapsible:true,minimizable:true,maximizable:true">
     <p>panel content.</p>
     <p>panel content.</p>
 </div>  
+
+<div>
+    <button id="btnTest">test</button>
+    <button id="btnClear">clear</button>
+</div>
 
