@@ -1,0 +1,17 @@
+﻿
+<script src="~/Scripts/layout.js"></script>
+
+<div id="cc" class="easyui-layout" fit="true" scroll="no">
+    <div data-options="region:'north',title:'North Title',split:true" style="height:100px;">north</div>        
+    <div data-options="region:'west',title:'导航菜单',split:true" style="width:180px;"  id="west">
+        <div id="wnav"></div>
+        @*<div style="margin: 5px">
+            <ul id="wnav"></ul>
+        </div>*@
+    </div>
+    <div id="mainPanle" region="center" style="background: #eee; overflow-y:hidden" border="false">
+        <div id="tabs" class="easyui-tabs" fit="true">
+        </div>
+    </div>
+</div>
+
