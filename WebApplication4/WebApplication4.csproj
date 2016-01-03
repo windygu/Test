@@ -56,6 +56,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -1597,6 +1599,16 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Models\LabModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LabModel.edmx</DependentUpon>
+      <LastGenOutput>LabModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\LabModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LabModel.edmx</DependentUpon>
+      <LastGenOutput>LabModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\easyui\easyloader.js" />
@@ -2394,6 +2406,17 @@
     <Content Include="Scripts\easyui\themes\ui-sunny\validatebox.css" />
     <Content Include="Scripts\easyui\themes\ui-sunny\window.css" />
     <Content Include="welcome.html" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Module\Module.cshtml" />
+    <EntityDeploy Include="Models\LabModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LabModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\LabModel.edmx.diagram">
+      <DependentUpon>LabModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -2404,11 +2427,31 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ModuleController.cs" />
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LabModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LabModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LabModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LabModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LabModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LabModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MODULE.cs">
+      <DependentUpon>LabModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -2432,7 +2475,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Views\Book\" />
   </ItemGroup>
   <ItemGroup>
@@ -2440,6 +2483,9 @@
       <Project>{a7128a0a-505d-4543-b23d-45bd5541c3c4}</Project>
       <Name>WebApplication4.Repository</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

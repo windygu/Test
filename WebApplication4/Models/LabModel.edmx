@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LabModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MODULE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PARENTID" Type="int" />
+          <Property Name="CODE" Type="char" MaxLength="50" />
+          <Property Name="FULLNAME" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="CATEGORY" Type="varchar" MaxLength="50" />
+          <Property Name="MODULETYPE" Type="int" Nullable="false" />
+          <Property Name="IMAGEINDEX" Type="varchar" MaxLength="50" />
+          <Property Name="SELECTEDIMAGEINDEX" Type="varchar" MaxLength="50" />
+          <Property Name="ICONCSS" Type="varchar" MaxLength="300" />
+          <Property Name="ICONURL" Type="varchar" MaxLength="300" />
+          <Property Name="NAVIGATEURL" Type="varchar" MaxLength="500" />
+          <Property Name="TARGET" Type="varchar" MaxLength="100" />
+          <Property Name="FORMNAME" Type="varchar" MaxLength="100" />
+          <Property Name="ASSEMBLYNAME" Type="varchar" MaxLength="100" />
+          <Property Name="PERMISSIONITEMCODE" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PERMISSIONSCOPETABLES" Type="varchar" MaxLength="500" />
+          <Property Name="ISPUBLIC" Type="int" Nullable="false" />
+          <Property Name="ISMENU" Type="int" Nullable="false" />
+          <Property Name="EXPAND" Type="int" Nullable="false" />
+          <Property Name="ALLOWEDIT" Type="int" Nullable="false" />
+          <Property Name="ALLOWDELETE" Type="int" Nullable="false" />
+          <Property Name="SORTCODE" Type="int" />
+          <Property Name="DELETEMARK" Type="int" Nullable="false" />
+          <Property Name="ENABLED" Type="int" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="varchar" MaxLength="500" />
+          <Property Name="CREATEON" Type="datetime" Nullable="false" />
+          <Property Name="CREATEUSERID" Type="int" />
+          <Property Name="CREATEBY" Type="varchar" MaxLength="50" />
+          <Property Name="MODIFIEDON" Type="datetime" />
+          <Property Name="MODIFIEDUSERID" Type="int" />
+          <Property Name="MODIFIEDBY" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="LabModelStoreContainer">
+          <EntitySet Name="MODULE" EntityType="Self.MODULE" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LabModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MODULE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PARENTID" Type="Int32" />
+          <Property Name="CODE" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="FULLNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CATEGORY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MODULETYPE" Type="Int32" Nullable="false" />
+          <Property Name="IMAGEINDEX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SELECTEDIMAGEINDEX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ICONCSS" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="ICONURL" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="NAVIGATEURL" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="TARGET" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FORMNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ASSEMBLYNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PERMISSIONITEMCODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PERMISSIONSCOPETABLES" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ISPUBLIC" Type="Int32" Nullable="false" />
+          <Property Name="ISMENU" Type="Int32" Nullable="false" />
+          <Property Name="EXPAND" Type="Int32" Nullable="false" />
+          <Property Name="ALLOWEDIT" Type="Int32" Nullable="false" />
+          <Property Name="ALLOWDELETE" Type="Int32" Nullable="false" />
+          <Property Name="SORTCODE" Type="Int32" />
+          <Property Name="DELETEMARK" Type="Int32" Nullable="false" />
+          <Property Name="ENABLED" Type="Int32" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEON" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CREATEUSERID" Type="Int32" />
+          <Property Name="CREATEBY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFIEDON" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIEDUSERID" Type="Int32" />
+          <Property Name="MODIFIEDBY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="LabEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MODULE" EntityType="Self.MODULE" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LabModelStoreContainer" CdmEntityContainer="LabEntities">
+          <EntitySetMapping Name="MODULE">
+            <EntityTypeMapping TypeName="LabModel.MODULE">
+              <MappingFragment StoreEntitySet="MODULE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PARENTID" ColumnName="PARENTID" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+                <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
+                <ScalarProperty Name="MODULETYPE" ColumnName="MODULETYPE" />
+                <ScalarProperty Name="IMAGEINDEX" ColumnName="IMAGEINDEX" />
+                <ScalarProperty Name="SELECTEDIMAGEINDEX" ColumnName="SELECTEDIMAGEINDEX" />
+                <ScalarProperty Name="ICONCSS" ColumnName="ICONCSS" />
+                <ScalarProperty Name="ICONURL" ColumnName="ICONURL" />
+                <ScalarProperty Name="NAVIGATEURL" ColumnName="NAVIGATEURL" />
+                <ScalarProperty Name="TARGET" ColumnName="TARGET" />
+                <ScalarProperty Name="FORMNAME" ColumnName="FORMNAME" />
+                <ScalarProperty Name="ASSEMBLYNAME" ColumnName="ASSEMBLYNAME" />
+                <ScalarProperty Name="PERMISSIONITEMCODE" ColumnName="PERMISSIONITEMCODE" />
+                <ScalarProperty Name="PERMISSIONSCOPETABLES" ColumnName="PERMISSIONSCOPETABLES" />
+                <ScalarProperty Name="ISPUBLIC" ColumnName="ISPUBLIC" />
+                <ScalarProperty Name="ISMENU" ColumnName="ISMENU" />
+                <ScalarProperty Name="EXPAND" ColumnName="EXPAND" />
+                <ScalarProperty Name="ALLOWEDIT" ColumnName="ALLOWEDIT" />
+                <ScalarProperty Name="ALLOWDELETE" ColumnName="ALLOWDELETE" />
+                <ScalarProperty Name="SORTCODE" ColumnName="SORTCODE" />
+                <ScalarProperty Name="DELETEMARK" ColumnName="DELETEMARK" />
+                <ScalarProperty Name="ENABLED" ColumnName="ENABLED" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="CREATEON" ColumnName="CREATEON" />
+                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+                <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+                <ScalarProperty Name="MODIFIEDON" ColumnName="MODIFIEDON" />
+                <ScalarProperty Name="MODIFIEDUSERID" ColumnName="MODIFIEDUSERID" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
