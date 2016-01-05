@@ -99,6 +99,76 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\ajax-loader.gif" />
+    <Content Include="images\back.gif" />
+    <Content Include="images\bg_v6.gif" />
+    <Content Include="images\blocks.gif" />
+    <Content Include="images\bottom.gif" />
+    <Content Include="images\bottom_over.gif" />
+    <Content Include="images\checkbox.png" />
+    <Content Include="images\checkmark.gif" />
+    <Content Include="images\checknomark.gif" />
+    <Content Include="images\coll2.gif" />
+    <Content Include="images\coll3.gif" />
+    <Content Include="images\collapse.png" />
+    <Content Include="images\cross.png" />
+    <Content Include="images\datagrid_title_bg.png" />
+    <Content Include="images\directory.png" />
+    <Content Include="images\expand.png" />
+    <Content Include="images\group-collapse.gif" />
+    <Content Include="images\group-expand.gif" />
+    <Content Include="images\headbg.png" />
+    <Content Include="images\head_bg.gif" />
+    <Content Include="images\inputstyle.gif" />
+    <Content Include="images\layout-browser-hd-bg.gif" />
+    <Content Include="images\loading.jpg" />
+    <Content Include="images\loading32.gif" />
+    <Content Include="images\loginbg.gif" />
+    <Content Include="images\logincircle.gif" />
+    <Content Include="images\logindocbg.gif" />
+    <Content Include="images\logindocbg1.gif" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\Members.png" />
+    <Content Include="images\noscript.gif" />
+    <Content Include="images\otherform.png" />
+    <Content Include="images\rdiframework.ico" />
+    <Content Include="images\rdiframework2.jpg" />
+    <Content Include="images\RDIFrameworkHeader2.jpg" />
+    <Content Include="images\spin-button-disable.png" />
+    <Content Include="images\spin-button.png" />
+    <Content Include="images\spin-down-disable.png" />
+    <Content Include="images\spin-down.png" />
+    <Content Include="images\spin-up-disable.png" />
+    <Content Include="images\spin-up.png" />
+    <Content Include="images\sql2008.png" />
+    <Content Include="images\success.gif" />
+    <Content Include="images\tabicons.png" />
+    <Content Include="images\table.png" />
+    <Content Include="images\text_inverse.png" />
+    <Content Include="images\webform.png" />
+    <Content Include="images\WFImage\note.ico" />
+    <Content Include="images\WFImage\交互节点.ico" />
+    <Content Include="images\WFImage\交互节点_灰.jpg" />
+    <Content Include="images\WFImage\判断节点1.ico" />
+    <Content Include="images\WFImage\启动节点.ico" />
+    <Content Include="images\WFImage\启动节点_灰.jpg" />
+    <Content Include="images\WFImage\子流程节点.ico" />
+    <Content Include="images\WFImage\子流程节点_灰.jpg" />
+    <Content Include="images\WFImage\控制节点.ico" />
+    <Content Include="images\WFImage\控制节点_灰.jpg" />
+    <Content Include="images\WFImage\查看节点.ico" />
+    <Content Include="images\WFImage\查看节点_灰.jpg" />
+    <Content Include="images\WFImage\终止节点.ico" />
+    <Content Include="images\WFImage\终止节点_灰.jpg" />
+    <Content Include="images\WFImage\自动节点.ico" />
+    <Content Include="images\WFImage\自连线.ico" />
+    <Content Include="images\WFImage\连线.ico" />
+    <Content Include="images\WFImage\锁.ico" />
+    <Content Include="images\winform.png" />
+    <Content Include="images\winwebform.png" />
+    <Content Include="images\zip.gif" />
+    <Content Include="Scripts\easyui\rdi.easyui-extend.js" />
+    <Content Include="Scripts\js\Module.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css3btn.css" />
@@ -2405,6 +2475,8 @@
     <Content Include="Scripts\easyui\themes\ui-sunny\tree.css" />
     <Content Include="Scripts\easyui\themes\ui-sunny\validatebox.css" />
     <Content Include="Scripts\easyui\themes\ui-sunny\window.css" />
+    <Content Include="Scripts\jQuery.Ajax.js" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="welcome.html" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
@@ -2417,6 +2489,8 @@
     <Content Include="Models\LabModel.edmx.diagram">
       <DependentUpon>LabModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Views\Organize\Organize.cshtml" />
+    <Content Include="Areas\Admin\Views\Module\ModuleList.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -2429,6 +2503,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\ModuleController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrganizeController.cs" />
+    <Compile Include="Common\ControllerWebApp.cs" />
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MainController.cs" />
@@ -2459,13 +2535,13 @@
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Main\Index.cshtml" />
+    <Content Include="Views\Shared\_ModuleLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
