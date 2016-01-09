@@ -8,16 +8,40 @@
     <link rel="stylesheet" type="text/css" href="~/Scripts/easyui/themes/icon.css" />
     <link rel="stylesheet" type="text/css" href="~/Scripts/easyui/themes/color.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/icon.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/common.css" />
+    <link rel="stylesheet" type="text/css" href="~/Scripts/jnotify/jquery.jnotify.css" />
     <script src="~/Scripts/jquery-1.8.3.min.js"></script>
     <script src="~/Scripts/easyui/jquery.easyui.min.js"></script>
     <script src="~/Scripts/easyui/locale/easyui-lang-zh_CN.js"></script>
     <script type="text/javascript" src="~/Scripts/jQuery.Ajax.js"></script>   
     <script type="text/javascript" src="~/Scripts/easyui/rdi.easyui-extend.js"></script> 
+    <script type="text/javascript" src="~/Scripts/validate/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/validate/jQuery.Validate.message_cn.js"></script>
+    <script type="text/javascript" src="~/Scripts/qqmsg/jQuery.qqmsg.js"></script>
+    <script type="text/javascript" src="~/Scripts/jnotify/jquery.jnotify.js"></script>
     <script type="text/javascript">
         //alert("test");
+        $(function () {
+            
+            $('#notity').jnotifyInizialize({
+                oneAtTime: true,
+                appendType: 'append'
+            })
+            .css({
+                'position': 'absolute',
+                '-top': '2px', 'left': '50%',
+                'margin': '20px 0px 0px -120px',
+                '-margin': '0px 0px 0px -120px',
+                //'right': '20px',
+                'width': '240px',
+                'z-index': '9999'
+            });            
+        });        
+        
     </script>     
 </head>
 <body style="padding:2px; margin:0px;">        
+    <div id="notity"></div>
     @RenderBody()    
 </body>
 </html>

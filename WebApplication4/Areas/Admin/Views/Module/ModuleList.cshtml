@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "ModuleList";
+    Layout = "~/Views/Shared/_ModuleLayout.cshtml";
+}
+
+<div id="toolbar">
+    @{Html.RenderAction("BuildToolBarButtons", "Module");}
+</div>
+
+<table id="navGrid"></table>
+
+<div id="dd"></div>
+
+<script type="text/javascript" src="~/Scripts/js/Module.js"></script>
+

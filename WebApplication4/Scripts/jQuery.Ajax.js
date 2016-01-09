@@ -4,8 +4,8 @@
         url: url,
         data: dataMap,
         dataType: "json",
-        beforeSend: function () { top.$.hLoading.show(); },
-        complete: function () { top.$.hLoading.hide(); },
+        beforeSend: function () { $.hLoading.show(); },
+        complete: function () { $.hLoading.hide(); },
         success: fnSuccess
     });
 };

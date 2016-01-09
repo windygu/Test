@@ -26,5 +26,6 @@ namespace WebApplication4.Models
         }
     
         public virtual DbSet<MODULE> MODULE { get; set; }
+        public virtual DbSet<DataDict> DataDict { get; set; }
     }
 }

@@ -4,7 +4,31 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LabModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="LabModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DataDict">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PARENTID" Type="int" />
+          <Property Name="CODE" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="VALUE" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="CATEGORYCODE" Type="varchar" MaxLength="50" />
+          <Property Name="CATEGORYNAME" Type="varchar" MaxLength="200" />
+          <Property Name="ALLOWEDIT" Type="int" Nullable="false" />
+          <Property Name="ALLOWDELETE" Type="int" Nullable="false" />
+          <Property Name="SORTCODE" Type="int" />
+          <Property Name="DELETEMARK" Type="int" Nullable="false" />
+          <Property Name="ENABLED" Type="int" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="varchar" MaxLength="500" />
+          <Property Name="CREATEON" Type="datetime" Nullable="false" />
+          <Property Name="CREATEUSERID" Type="int" />
+          <Property Name="CREATEBY" Type="varchar" MaxLength="50" />
+          <Property Name="MODIFIEDON" Type="datetime" />
+          <Property Name="MODIFIEDUSERID" Type="int" />
+          <Property Name="MODIFIEDBY" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="MODULE">
           <Key>
             <PropertyRef Name="ID" />
@@ -42,10 +66,10 @@
           <Property Name="MODIFIEDBY" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="LabModelStoreContainer">
+          <EntitySet Name="DataDict" EntityType="Self.DataDict" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MODULE" EntityType="Self.MODULE" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LabModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -87,7 +111,32 @@
         </EntityType>
         <EntityContainer Name="LabEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="MODULE" EntityType="Self.MODULE" />
+          <EntitySet Name="DataDict" EntityType="LabModel.DataDict" />
         </EntityContainer>
+        <EntityType Name="DataDict">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PARENTID" Type="Int32" />
+          <Property Name="CODE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NAME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="VALUE" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CATEGORYCODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CATEGORYNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ALLOWEDIT" Type="Int32" Nullable="false" />
+          <Property Name="ALLOWDELETE" Type="Int32" Nullable="false" />
+          <Property Name="SORTCODE" Type="Int32" />
+          <Property Name="DELETEMARK" Type="Int32" Nullable="false" />
+          <Property Name="ENABLED" Type="Int32" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEON" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CREATEUSERID" Type="Int32" />
+          <Property Name="CREATEBY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFIEDON" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIEDUSERID" Type="Int32" />
+          <Property Name="MODIFIEDBY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -128,6 +177,31 @@
                 <ScalarProperty Name="MODIFIEDON" ColumnName="MODIFIEDON" />
                 <ScalarProperty Name="MODIFIEDUSERID" ColumnName="MODIFIEDUSERID" />
                 <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DataDict">
+            <EntityTypeMapping TypeName="LabModel.DataDict">
+              <MappingFragment StoreEntitySet="DataDict">
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+                <ScalarProperty Name="MODIFIEDUSERID" ColumnName="MODIFIEDUSERID" />
+                <ScalarProperty Name="MODIFIEDON" ColumnName="MODIFIEDON" />
+                <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+                <ScalarProperty Name="CREATEUSERID" ColumnName="CREATEUSERID" />
+                <ScalarProperty Name="CREATEON" ColumnName="CREATEON" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="ENABLED" ColumnName="ENABLED" />
+                <ScalarProperty Name="DELETEMARK" ColumnName="DELETEMARK" />
+                <ScalarProperty Name="SORTCODE" ColumnName="SORTCODE" />
+                <ScalarProperty Name="ALLOWDELETE" ColumnName="ALLOWDELETE" />
+                <ScalarProperty Name="ALLOWEDIT" ColumnName="ALLOWEDIT" />
+                <ScalarProperty Name="CATEGORYNAME" ColumnName="CATEGORYNAME" />
+                <ScalarProperty Name="CATEGORYCODE" ColumnName="CATEGORYCODE" />
+                <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="PARENTID" ColumnName="PARENTID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

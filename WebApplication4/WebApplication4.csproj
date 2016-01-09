@@ -99,6 +99,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Views\Module\ModuleList.cshtml" />
+    <Content Include="Content\common.css" />
+    <Content Include="Content\iconlist.htm" />
     <Content Include="images\ajax-loader.gif" />
     <Content Include="images\back.gif" />
     <Content Include="images\bg_v6.gif" />
@@ -168,6 +171,8 @@
     <Content Include="images\winwebform.png" />
     <Content Include="images\zip.gif" />
     <Content Include="Scripts\easyui\rdi.easyui-extend.js" />
+    <Content Include="Scripts\jnotify\jquery.jnotify.css" />
+    <Content Include="Scripts\jnotify\jquery.jnotify.js" />
     <Content Include="Scripts\js\Module.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -2476,6 +2481,13 @@
     <Content Include="Scripts\easyui\themes\ui-sunny\validatebox.css" />
     <Content Include="Scripts\easyui\themes\ui-sunny\window.css" />
     <Content Include="Scripts\jQuery.Ajax.js" />
+    <Content Include="Scripts\qqmsg\gb_tip_layer.png" />
+    <Content Include="Scripts\qqmsg\gb_tip_layer_ie6.png" />
+    <Content Include="Scripts\qqmsg\jQuery.qqmsg.js" />
+    <Content Include="Scripts\qqmsg\loading.gif" />
+    <Content Include="Scripts\qqmsg\msgbox.css" />
+    <Content Include="Scripts\validate\jQuery.Validate.message_cn.js" />
+    <Content Include="Scripts\validate\jquery.validate.min.js" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="welcome.html" />
     <Content Include="Areas\Admin\Views\web.config" />
@@ -2490,7 +2502,6 @@
       <DependentUpon>LabModel.edmx</DependentUpon>
     </Content>
     <Content Include="Areas\Admin\Views\Organize\Organize.cshtml" />
-    <Content Include="Areas\Admin\Views\Module\ModuleList.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -2502,6 +2513,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\DataDictController.cs" />
     <Compile Include="Areas\Admin\Controllers\ModuleController.cs" />
     <Compile Include="Areas\Admin\Controllers\OrganizeController.cs" />
     <Compile Include="Common\ControllerWebApp.cs" />
@@ -2510,6 +2522,9 @@
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataDict.cs">
+      <DependentUpon>LabModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\LabModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -2552,6 +2567,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\DataDict\" />
     <Folder Include="Views\Book\" />
   </ItemGroup>
   <ItemGroup>

@@ -5,7 +5,8 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="2d22809f7bd7481a8b3a881f1280769f" Name="Diagram1">
-        <EntityTypeShape EntityType="LabModel.MODULE" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabModel.MODULE" Width="2.375" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabModel.DataDict" Width="2.125" PointX="3.875" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
